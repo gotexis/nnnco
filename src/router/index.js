@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Inbox',
+    name: 'inbox',
     component: Inbox
   },
   {
@@ -18,7 +18,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  linkExactActiveClass: 'is-active'
 })
 
 export default router

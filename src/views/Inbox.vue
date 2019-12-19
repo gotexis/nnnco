@@ -1,7 +1,7 @@
 <template>
-    <div class="column is-10">
-        <div class="columns">
-            <div class="column is-4 messages hero is-fullheight">
+    <div class="column is-10 d-flex-column">
+        <div class="grow columns">
+            <div class="column is-4 messages  is-fullheight">
                 <div class="action-buttons">
                     <div class="control is-grouped"><a class="button is-small"><i
                             class="fas fa-chevron-down"></i></a> <a
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="column is-6 message is-fullheight">
+            <div class="column is-8 message is-fullheight">
                 <div class="action-buttons">
                     <div class="control is-grouped"><a class="button is-small"><i class="fas fa-inbox"></i></a>
                         <a
@@ -111,217 +111,180 @@
 </script>
 
 <style lang="sass">
-    html, body
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
-        font-size: 14px
-        line-height: 1.5
-        height: 100%
+
+    .grow
+        flex-grow: 1
+
+    .aside
+        display: block
+        background-color: #F9F9F9
+        border-right: 1px solid #DEDEDE
+
+    .messages
+        display: block
         background-color: #fff
+        border-right: 1px solid #DEDEDE
+        padding: 40px 20px
 
-        .nav
-            &.is-dark
-                background-color: #232B2D
-                color: #F6F7F7
+    .message
+        display: block
+        background-color: #fff
+        padding: 40px 20px
 
-                .nav-item a, a.nav-item
-                    color: #F6F7F7
-
-                .nav-item a.button.is-default
-                    color: #F6F7F7
-                    background-color: transparent
-                    border-width: 2px
-
-            &.menu
-                border-bottom: 1px solid #e1e1e1
-
-                .nav-item
-                    .icon-btn
-                        border: 3px solid #B7C6C9
-                        border-radius: 90px
-                        padding: 5px 7px
-                        color: #B7C6C9
-
-                    &.is-active .icon-btn
-                        color: #2EB398
-                        border: 3px solid #2EB398
-
-                    .icon-btn .fa
-                        font-size: 20px
-                        color: #B7C6C9
-
-                    &.is-active .icon-btn .fa
-                        color: #2EB398
-
-        .aside
-            display: block
-            background-color: #F9F9F9
-            border-right: 1px solid #DEDEDE
-
-        .messages
-            display: block
-            background-color: #fff
-            border-right: 1px solid #DEDEDE
-            padding: 40px 20px
-
-        .message
-            display: block
-            background-color: #fff
-            padding: 40px 20px
-
-        .aside
-            .compose
-                height: 95px
-                margin: 0 -10px
-                padding: 25px 30px
-
-                .button
-                    color: #F6F7F7
-
-                    .compose
-                        font-size: 14px
-                        font-weight: 700
-
-            .main
-                padding: 40px
-                color: #6F7B7E
-
-            .title
-                color: #6F7B7E
-                font-size: 12px
-                font-weight: bold
-                text-transform: uppercase
-
-            .main
-                .item
-                    display: block
-                    padding: 10px 0
-                    color: #6F7B7E
-
-                    &.active
-                        background-color: #F1F1F1
-                        margin: 0 -50px
-                        padding-left: 50px
-
-                    &:active, &:hover
-                        background-color: #F2F2F2
-                        margin: 0 -50px
-                        padding-left: 50px
-
-                .icon
-                    font-size: 19px
-                    padding-right: 30px
-                    color: #A0A0A0
-
-                .name
-                    font-size: 15px
-                    color: #5D5D5D
-                    font-weight: 500
-
-        .messages .action-buttons
-            padding: 0
-            margin-top: -20px
-
-        .message .action-buttons
-            padding: 0
-            margin-top: -5px
-
-        .action-buttons .control.is-grouped
-            display: inline-block
-            margin-right: 30px
-
-            &:last-child
-                margin-right: 0
+    .aside
+        .compose
+            height: 95px
+            margin: 0 -10px
+            padding: 25px 30px
 
             .button
-                &:first-child
-                    border-radius: 5px 0 0 5px
+                color: #F6F7F7
 
-                &:last-child
-                    border-radius: 0 5px 5px 0
+                .compose
+                    font-size: 14px
+                    font-weight: 700
 
-                margin-right: -5px
-                border-radius: 0
+        .main
+            padding: 40px
+            color: #6F7B7E
 
-        .pg
-            display: inline-block
-            top: 10px
+        .title
+            color: #6F7B7E
+            font-size: 12px
+            font-weight: bold
+            text-transform: uppercase
 
-        .action-buttons .pg
-            .title
+        .main
+            .item
                 display: block
-                margin-top: 0
-                padding-top: 0
-                margin-bottom: 3px
-                font-size: 12px
-                color: #AAAAA
-
-            a
-                font-size: 12px
-                color: #AAAAAA
-                text-decoration: none
-
-        .is-grouped .button
-            background-image: linear-gradient(#F8F8F8, #F1F1F1)
-
-            .fa
-                font-size: 15px
-                color: #AAAAAA
-
-        .inbox-messages, .message-preview
-            margin-top: 60px
-
-        .inbox-messages
-            .card
-                width: 100%
-
-            strong
-                color: #5D5D5D
-
-            .msg-check
-                padding: 0 20px
-
-            .msg-subject
                 padding: 10px 0
-                color: #5D5D5D
+                color: #6F7B7E
 
-            .msg-attachment
-                float: right
+                &.active
+                    background-color: #F1F1F1
+                    margin: 0 -50px
+                    padding-left: 50px
 
-            .msg-snippet
-                padding: 5px 20px 0px 5px
+                &:active, &:hover
+                    background-color: #F2F2F2
+                    margin: 0 -50px
+                    padding-left: 50px
 
-            .msg-subject .fa
-                font-size: 14px
-                padding: 3px 0
+            .icon
+                font-size: 19px
+                padding-right: 30px
+                color: #A0A0A0
 
-            .msg-timestamp
-                float: right
-                padding: 0 20px
-                color: #5D5D5D
-
-        .message-preview
-            .avatar
-                display: inline-block
-
-            .top .address
-                display: inline-block
-                padding: 0 20px
-
-        .avatar img
-            width: 40px
-            border-radius: 50px
-            border: 2px solid #999
-            padding: 2px
-
-        .address
             .name
-                font-size: 16px
-                font-weight: bold
+                font-size: 15px
+                color: #5D5D5D
+                font-weight: 500
 
-            .email
-                font-weight: bold
-                color: #B6C7D1
+    .messages .action-buttons
+        padding: 0
+        margin-top: -20px
 
-        .card.active
-            background-color: #F5F5F5
+    .message .action-buttons
+        padding: 0
+        margin-top: -5px
+
+    .action-buttons .control.is-grouped
+        display: inline-block
+        margin-right: 30px
+
+        &:last-child
+            margin-right: 0
+
+        .button
+            &:first-child
+                border-radius: 5px 0 0 5px
+
+            &:last-child
+                border-radius: 0 5px 5px 0
+
+            margin-right: -5px
+            border-radius: 0
+
+    .pg
+        display: inline-block
+        top: 10px
+
+    .action-buttons .pg
+        .title
+            display: block
+            margin-top: 0
+            padding-top: 0
+            margin-bottom: 3px
+            font-size: 12px
+            color: #AAAAA
+
+        a
+            font-size: 12px
+            color: #AAAAAA
+            text-decoration: none
+
+    .is-grouped .button
+        background-image: linear-gradient(#F8F8F8, #F1F1F1)
+
+        .fa
+            font-size: 15px
+            color: #AAAAAA
+
+    .inbox-messages, .message-preview
+        margin-top: 60px
+
+    .inbox-messages
+        .card
+            width: 100%
+
+        strong
+            color: #5D5D5D
+
+        .msg-check
+            padding: 0 20px
+
+        .msg-subject
+            padding: 10px 0
+            color: #5D5D5D
+
+        .msg-attachment
+            float: right
+
+        .msg-snippet
+            padding: 5px 20px 0px 5px
+
+        .msg-subject .fa
+            font-size: 14px
+            padding: 3px 0
+
+        .msg-timestamp
+            float: right
+            padding: 0 20px
+            color: #5D5D5D
+
+    .message-preview
+        .avatar
+            display: inline-block
+
+        .top .address
+            display: inline-block
+            padding: 0 20px
+
+    .avatar img
+        width: 40px
+        border-radius: 50px
+        border: 2px solid #999
+        padding: 2px
+
+    .address
+        .name
+            font-size: 16px
+            font-weight: bold
+
+        .email
+            font-weight: bold
+            color: #B6C7D1
+
+    .card.active
+        background-color: #F5F5F5
 </style>

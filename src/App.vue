@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="app">
         <nav class="navbar has-shadow">
             <div class="container">
                 <div class="navbar-brand">
@@ -39,27 +39,39 @@
             </div>
         </nav>
 
-        <div>
-            <div class="columns">
-                <aside class="column is-2 aside is-fullheight">
-                    <div>
-                        <div class="compose has-text-centered"><a class="button is-danger is-block is-bold"><span
-                                class="compose"
-                                @click="$router.push({name: 'compose'})"
-                        >Compose</span></a></div>
-                        <div class="main"><a href="#" class="item active"><span class="icon"><i
-                                class="fa fa-inbox"></i></span><span class="name">Inbox</span></a> <a href="#"
-                                                                                                      class="item"><span
-                                class="icon"><i class="fa fa-star"></i></span><span class="name">Starred</span></a> <a
-                                href="#" class="item"><span class="icon"><i class="fa fa-envelope"></i></span><span
-                                class="name">Sent Mail</span></a> <a href="#" class="item"><span class="icon"><i
-                                class="fa fa-folder"></i></span><span class="name">Folders</span></a></div>
+        <div class="columns main">
+            <aside class="column is-2 aside is-fullheight">
+                <div>
+                    <div class="compose has-text-centered"><a class="button is-danger is-block is-bold"><span
+                            class="compose"
+                            @click="$router.push({name: 'compose'})">
+                            Compose
+                        </span>
+                    </a>
                     </div>
-                </aside>
-                <!--        MAIN -->
+                    <div class="main"><a href="#" class="item active"><span class="icon"><i
+                            class="fa fa-inbox"></i>
+                        </span>
+                        <span class="name">Inbox</span>
+                    </a>
+                        <a href="#"
+                           class="item"><span class="icon">
+                                <i class="fa fa-star"></i>
+                            </span>
+                            <span class="name">Starred</span>
+                        </a>
+                        <a
+                                href="#" class="item">
+                            <span class="icon"><i class="fa fa-envelope"></i></span><span
+                                class="name">Sent Mail</span>
+                        </a> <a href="#" class="item"><span class="icon"><i
+                                class="fa fa-folder"></i>
+                        </span><span class="name">Folders</span></a></div>
+                </div>
+            </aside>
+            <!--        MAIN -->
 
-                <router-view/>
-            </div>
+            <router-view/>
         </div>
         <footer class="footer">
             <div class="container">
@@ -76,22 +88,66 @@
 <script>
   export default {
     data() {
-      return {
-        paginate: {
-          pointer: {
-            start: 1,
-            end: 10
-          },
-          total: 100
-        }
-      }
+      return {}
     },
-    methods: {
-      showMessage: function () {
-      }
-    }
+    methods: {}
   }
 </script>
 
+
+<style lang="sass" scoped>
+
+    #app
+        height: 100%
+        min-height: 100vh
+        display: flex
+        flex-direction: column
+
+    .main
+        margin: 0 !important
+        flex-grow: 1
+
+    .nav
+        &.is-dark
+            background-color: #232B2D
+            color: #F6F7F7
+
+            .nav-item a, a.nav-item
+                color: #F6F7F7
+
+            .nav-item a.button.is-default
+                color: #F6F7F7
+                background-color: transparent
+                border-width: 2px
+
+        &.menu
+            border-bottom: 1px solid #e1e1e1
+
+            .nav-item
+                .icon-btn
+                    border: 3px solid #B7C6C9
+                    border-radius: 90px
+                    padding: 5px 7px
+                    color: #B7C6C9
+
+                &.is-active .icon-btn
+                    color: #2EB398
+                    border: 3px solid #2EB398
+
+                .icon-btn .fa
+                    font-size: 20px
+                    color: #B7C6C9
+
+                &.is-active .icon-btn .fa
+                    color: #2EB398
+
+</style>
 <style lang="sass">
+
+    html, body
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+        font-size: 14px
+        line-height: 1.5
+        height: 100%
+        background-color: #fff
 </style>

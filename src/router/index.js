@@ -14,6 +14,11 @@ const routes = [
     path: '/compose',
     name: 'compose',
     component: () => import('@/views/Compose.vue')
+  },
+  {
+    path: '/sent',
+    name: 'sent',
+    component: () => import('@/views/Sent.vue')
   }
 ]
 

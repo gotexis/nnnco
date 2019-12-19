@@ -71,28 +71,14 @@
               </span>
               <span class="name">Inbox</span>
             </router-link>
-            <a
-              href="#"
-              class="item"
-            ><span class="icon">
-               <i class="fa fa-star" />
-             </span>
-              <span class="name">Starred</span>
-            </a>
-            <a
-              href="#"
+            <router-link
+              :to="{name: 'sent'}"
               class="item"
             >
               <span class="icon"><i class="fa fa-envelope" /></span><span
                 class="name"
               >Sent Mail</span>
-            </a> <a
-              href="#"
-              class="item"
-            ><span class="icon"><i
-              class="fa fa-folder"
-            />
-            </span><span class="name">Folders</span></a>
+            </router-link>
           </div>
         </div>
       </aside>

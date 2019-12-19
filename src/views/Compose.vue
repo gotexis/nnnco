@@ -88,6 +88,7 @@
 <script>
   import axios from "axios"
   import ExisEmailTagInput from "@/components/ExisEmailTagInput";
+  import {mapActions} from "vuex";
 
   const endpoint = 'https://tt-email-gateway.nnnco.io/v1/api/emails'
 
@@ -111,6 +112,7 @@
       }
     },
     methods: {
+      ...mapActions(['storeSend']),
       async send() {
         // validation
         if (!(this.text && this.to.length && this.subject)) {
@@ -153,10 +155,12 @@
               type: 'is-success',
               hasIcon: true
             })
-            // todo: navigate away?
+            this.storeSend({email: data})
+            this.$router.push({name: 'sent'})
           }
 
         } catch (e) {
+          console.log(e);
           this.$buefy.notification.open({
             message: e.response.data.message,
             type: 'is-danger',
